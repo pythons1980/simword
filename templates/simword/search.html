@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles i18n %}
+
+{% block content %}
+<div class="well well-sm">
+    <label>Input Word</label>
+    {{input_word}}
+    <br>
+    <label>Most Similar Word</label>
+    <span>{{most_similar_word.1}}</span>
+</div>
+<div class="well well-sm">
+    {% for word in object.string_list %}
+    <span class="badge"><label>{{word}}</label></span>
+    {% endfor %}
+</div>
+<div class="well well-sm">
+    <a href="{% url 'stringlist_input' %}" class="btn btn-primary">{% trans 'Input strings' %}</a>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load staticfiles i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIMWORD</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    {% for message in messages %}
+    <div class="alert {% if message.tags == 'info' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% elif message.tags == 'error' %}alert-error{% else %}alert-info{% endif %}">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{message}}
+    </div>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
