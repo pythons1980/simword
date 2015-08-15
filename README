@@ -14,11 +14,12 @@ to check results
 
 B) Usage:
 API and urls, see: urls.py
++ input strings are expected to be separated by commas.
 
 C) Tests:
 ./manage.py harvest
 + there is problem with compatibility of django (1.8) and lettuce (0.2.20), one
   has to change command in ../lib/python2.7/site-packages/lettuce/django/management/commands/harvest.py
   in following way: replate make_option('-v', '--verbosity', action='store', dest='verbosity', default='4', ...)
-  by make_option('-l', '--lettuce-verbosity', action='store', dest='lettuce-verbosity', default='4', ...)   
+  by make_option('-l', '--lettuce-verbosity', action='store', dest='lettuce-verbosity', default='4', ...).
 
