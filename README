@@ -1,0 +1,24 @@
+A) Description - task:
+Create simple Django application that provide following facilities:
+1) You are given a list of strings.
+Your task is following
+Given a list of strings and word (that may be within list of strings and may not be) 
+find a string with the most similar word (with any method that you prefer).
+Bonus for computational-efficient implementation.
+
+2) create an endpoint for user to input list of string and button to execute that function in order 
+to check results
+3) design a restfull api using Django REST framework for that functionality,
+ that can be used by 3rd party,
+ application without authorisation. for example via JSON serialisation.
+
+B) Usage:
+API and urls, see: urls.py
+
+C) Tests:
+./manage.py harvest
++ there is problem with compatibility of django (1.8) and lettuce (0.2.20), one
+  has to change command in ../lib/python2.7/site-packages/lettuce/django/management/commands/harvest.py
+  in following way: replate make_option('-v', '--verbosity', action='store', dest='verbosity', default='4', ...)
+  by make_option('-l', '--lettuce-verbosity', action='store', dest='lettuce-verbosity', default='4', ...)   
+
